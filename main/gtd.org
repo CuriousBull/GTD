@@ -1,0 +1,17 @@
+#+TITLE: My GTD Style Workflow
+#+AUTHOR: 胡琛
+
+* Work
+  
+** TODO 王雄的混沌书 [ ]
+   
+   - [ ] Latex 格式修改
+   - [ ] 修改第 5、6 章
+  
+** TODO 程序化短课 [/]
+    
+    - [ ] 资料整理
+
+
+* Private
+  
