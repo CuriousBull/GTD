@@ -4,14 +4,37 @@
 * Work
   
 ** TODO 王雄的混沌书 [ ]
+   SCHEDULED: <2017-03-01 周三 14:00>
    
    - [ ] Latex 格式修改
    - [ ] 修改第 5、6 章
   
-** TODO 程序化短课 [/]
+** TODO 程序化短课 [2/3]
+   SCHEDULED: <2017-03-01 周三 11:30>
+   :LOGBOOK:
+   CLOCK: [2017-03-01 周三 12:26]--[2017-03-01 周三 12:51] =>  0:25
+   CLOCK: [2017-03-01 周三 11:31]--[2017-03-01 周三 11:56] =>  0:25
+   :END:
     
-    - [ ] 资料整理
-
+    - [X] 资料整理
+    - [X] 讲义准备
+    - [ ] 课件准备
+      - [ ] Week 1
+      - [ ] Week 2
+      - [ ] Week 3
+      - [ ] Week 4
+      - [ ] Week 5
+      - [ ] Week 6
+    - [ ] 作业准备
 
 * Private
-  
+
+* Habit
+** NEXT 健身
+ [2017-03-01 周三 12:26]
+ [[file:~/workflow/main/gtd.org::*Habit][Habit]]
+ SCHEDULED: <2017-03-01 周三 16:00 .+1d/3d>
+ :PROPERTIES:
+ :STYLE: habit
+ :REPEAT_TO_STATE: NEXT
+ :END:
