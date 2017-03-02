@@ -2,7 +2,6 @@
 #+AUTHOR: 胡琛
 
 * Work
-  
 ** TODO 王雄的混沌书 [ ]
    SCHEDULED: <2017-03-01 周三 14:00>
    :LOGBOOK:
@@ -31,12 +30,37 @@
     - [ ] 作业准备
 
 * Private
+** TODO 机器学习基础 [/]
+   :LOGBOOK:
+   CLOCK: [2017-03-02 周四 15:55]--[2017-03-02 周四 16:20] =>  0:25
+   :END:
+   - [ ] 决策树
+   - [ ] 最近邻规则 -- KNN 分类应用
+   - [ ] 支持向量机上
+   - [ ] 神经网络
+   - [ ] 简单线性回归
+   - [ ] 多元线性回归
+   - [ ] 非线性回归 -- Logistic Regression
+   - [ ] 神经网络 -- NN 算法
+   - [ ] 支持向量机下
+   - [ ] 回归中的相关度和决定系数
+   - [ ] 回归中的相关性和 R 平方值应用
+   - [ ] K-means 算法
+   - [ ] 层次聚类
 
 * Habit
 ** NEXT 健身
  [2017-03-01 周三 12:26]
  [[file:~/workflow/main/gtd.org::*Habit][Habit]]
- SCHEDULED: <2017-03-01 周三 16:00 .+1d/3d>
+ SCHEDULED: <2017-03-01 周三 16:00 .+1d>
+ :PROPERTIES:
+ :STYLE: habit
+ :REPEAT_TO_STATE: NEXT
+ :END:
+** NEXT 盘账
+ [2017-03-02 周四 15:54]
+ [[file:~/workflow/main/gtd.org::*Habit][Habit]]
+ SCHEDULED: <2017-03-02 周四 22:00 .+1d>
  :PROPERTIES:
  :STYLE: habit
  :REPEAT_TO_STATE: NEXT
