@@ -1,3 +1,4 @@
+#+LANGUAGE: zh_cn
 
 * 什么是决策树 (Decision Tree)
 
@@ -6,7 +7,18 @@
   而每个树叶节点代表类或类分布。树的最顶层是根节点。
   #+END_QUOTE
 
-  [[file:decisiontree/decisiontree_01.jpg][决策树示意图]] 
+  [[file:decisiontree/decisiontree_01.jpg][决策树示意图]]
+
+* 决策树生成基本流程
+
+  - *输入* ：
+    - 训练集  $D=\{(x_1,y_1), (x_2,y_2),\ldots,(x_m,y_m)\}$
+    - 属性集  $A=\{a_1,a_2,ldots,a_d\}
+  - *过程* ： 函数 TreeGenerate(D,A)
+    生成节点 node
+    if D 中样本全属于同一类别 C then
+    将 node 标记为 C 类叶节点; return
+    end if
 
 * 如何创建决策树
 
@@ -61,5 +73,9 @@
       - 分枝
 
 ** 决策树归纳算法 -- CS4.5
+   
+#+BEGIN_SRC ditaa
+
+#+END_SRC
       
 
