@@ -1,0 +1,262 @@
+#+TITLE: 算法交易综述
+
+* 何为算法交易
+
+  利用自动化平台，执行预先设置的一系列规则完成交易行为。
+
+* 算法交易优势
+
+  1. 历史数据评估
+   
+  2. 执行高效
+
+  3. 无主观情绪输入
+
+  4. 可度量评价
+
+  5. 交易频率
+
+* 算法交易劣势
+  
+  1. 成本
+
+  2. 技巧
+
+* 算法交易流程
+
+  #+BEGIN_QUOTE
+  基于某种平台
+  #+END_QUOTE
+
+  1. 提出假设
+
+  2. 建立模型
+
+  3. 回测验证
+
+  4. 执行交易
+
+* 交易策略来源
+
+  1. 市场微观结构研究 (for HFT mostly)
+
+  2. 基金结构套利 (fund structure arbitrage)
+
+  3. 机器学习/人工智能
+
+* Order Book
+
+* 机器学习流程
+
+  #+BEGIN_SRC ditaa :file ml-flow_01.png :exports results
+    +-------------------------+           +-------------------------+         +-------------------------+
+    |         cBLU            |           |         cRED            |         |         cBLU            |
+    |                         |           |                         |         |                         |
+    |                         |           |                         |         |                         |
+    |                         |           |                         |         |                         |
+    | Input                   +---------->| ML Process              +-------->| Output                  |
+    |                         |           |                         |         |                         |
+    |                         |           |                         |         |                         |
+    |                         |           |                         |         |                         |
+    |                         |           |                         |         |                         |
+    |                         |           |                         |         |                         |
+    +-------------------------+           +-------------------------+         +-------------------------+
+  #+END_SRC
+
+  #+RESULTS:
+  [[file:ml-flow_01.png]]
+
+  #+BEGIN_SRC ditaa :file ml-flow_02.png :exports results
+    +-------------------------+           +-------------------------+              +--------------------+
+    |         cBLU            |           |         cRED            |              |       cRED         |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    | Historic Data           +---------->| Learning Algorithm      +------------->|    Model           |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    +-------------------------+           +-------------------------+              +---------+----------+
+
+
+
+    +-------------------------+           +-------------------------+              +--------------------+
+    |         cBLU            |           |         cRED            |              |       cBLU         |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    | New Input               +---------->| Model                   +------------->|    Output          |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    |                         |           |                         |              |                    |
+    +-------------------------+           +-------------------------+              +---------+----------+
+
+
+  #+END_SRC
+
+  #+RESULTS:
+  [[file:ml-flow_02.png]]
+
+* Four Paradigms of Machine Learning
+
+  - Connectivism: 变量之间关系是连接的形式，连接加权，非线性变换 --> 黑箱
+
+  - Symbolism: 建立模型，学习得到某些规则 --> 可解释性
+
+  - Frequencism: 频率主义
+
+  - Beyesian: 贝叶斯学派
+
+* Machine Learning in a Nutshell 
+
+  - Data
+
+  - Model & Objective Function
+
+  - Optimization
+
+* Machine Learning AND Trading
+
+  - Limit Order Book Modeling
+
+  - Price-based Classification Models
+
+  - Text-based Classification Models --> 风控 (股灾前，新闻爬取)
+
+  - Reinforcement Learning
+
+
+* Four Key Factors That Make Magic Happens 
+
+  - Good model and efficient training algorithm
+
+  - Hardware (CPU/GPU)
+
+  - (High quality) DATA
+
+  - Platform (keras/tensorflow/sklearn)
+
+* A Litter Aside
+  
+  1. 深度学习
+
+     - =CNN= for spatial data (空间)
+  
+     - =LSTM= for temporal data (时间)
+
+  2. 强化学习
+
+  3. 自然语言处理
+
+* Key Problem
+
+  #+BEGIN_QUOTE
+  *How to define the input features?*
+  #+END_QUOTE
+
+  - 特征工程
+
+  - 特征选择
+
+* 交易策略评估
+
+  1. 策略基本假设
+
+  2. Sharp Ratio
+
+  3. 杠杆
+
+  4. 频率
+
+  5. 风险
+
+  6. W/L
+
+  7. 模型复杂度
+
+  8. 最大亏损 (Maximum Drawdown)
+
+  9. Benchmarking
+
+* 回测
+  
+  #+BEGIN_QUOTE
+  将交易策略在历史数据中进行合理验证过程。
+  #+END_QUOTE
+
+  */科学的回测十分重要!!!/*
+
+* 回测意义
+
+  1. 策略筛选
+
+  2. 策略优化
+
+  3. 策略验证
+
+* 错误的回测方法
+
+  1. 乐观主义偏差 (Special look back region.)
+
+  2. 时间旅行
+
+     - 程序 bug
+
+     - Train/Validation/Test set
+
+  3. 幸存者偏差
+     
+     譬如股灾，倒闭了许多公司，然后回测仅仅回测股灾后还存活下来的公司，就是幸存者偏差。
+
+* 工具和语言
+
+  - Python
+    - Pandas
+    - Sklearn
+    - Numpy
+    - $\ldots$
+     
+* 量化交易 -- 从工程角度
+
+  几乎所有国内量化平台，核心代码片段
+
+  #+BEGIN_SRC python
+    #event driven
+
+    while True:
+        new_event = get_new_event()
+
+        if new_event.something == "whatever"
+            do_something()
+
+        if new_event.something == "all right"
+            do_something_else()
+
+        tick(50) #wait 50 milliseconds
+  #+END_SRC
+
+  Mainly include modules:
+  
+  - Event
+
+  - Event Queue
+
+  - Data handler
+
+  - Strategy
+
+  - Portfolio
+
+  - Executionhandler
+
+  - Backtest
+  
+  - 
+  
+
+  
+  

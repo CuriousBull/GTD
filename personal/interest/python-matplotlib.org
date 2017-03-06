@@ -1,0 +1,11 @@
+
+* A simple case
+
+  #+BEGIN_SRC ipython :session mysession
+    %matplotlib inline
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    X = np.array([1,2,3,4])
+    plt.plot(X)
+  #+END_SRC
