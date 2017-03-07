@@ -222,7 +222,7 @@
      
 * 量化交易 -- 从工程角度
 
-  几乎所有国内量化平台，核心代码片段
+  几乎所有国内量化平台，核心代码片段 (事件驱动)
 
   #+BEGIN_SRC python
     #event driven
@@ -251,11 +251,9 @@
 
   - Portfolio
 
-  - Executionhandler
+  - Execution handler
 
   - Backtest
-  
-  - 
   
 
   

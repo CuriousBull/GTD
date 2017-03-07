@@ -1,0 +1,141 @@
+
+* 任务目标
+
+  - [ ] 掌握 Python 语言和常用数据处理包
+  - [ ] 从技术分析到机器学习
+  - [ ] 实战：Python 爬取金融数据
+  - [ ] 实战： 利用 Python 进行金融数据处理：数据清洗、数据可视化、特征提取、etc
+  - [ ] 实战： 第一个基于机器学习的量化模型
+
+* 需要掌握的 Python 基础知识
+
+  1. Python 数据类型：str, float, int, bool, long
+  2. Python 基本语法： 分支、循环、函数
+  3. Python 数据结构：tuple, list, dictionary, etc
+  4. Python 内置函数
+  5. Python 和面向对象编程
+
+* 需要掌握的 numpy 知识点
+
+  1. 利用 numpy 进行各种线性代数计算
+     - 创建矩阵、向量，etc
+     - 熟练掌握矩阵的索引
+  2. numpy 输入和输出
+  3. numpy 常用函数
+  4. 自学书籍：利用 Python 进行数据分析
+* 需要掌握的 pandas 的知识点
+  
+  1. pandas 与数据 io
+  2. pandas 的 dataframe 的内置各种内置函数 (统计指标，绘图)
+  3. pandas 的索引
+  4. 自学数据：利用 Python 进行数据分析
+* 需要掌握的 sklearn 知识点 
+
+  1. 利用 sklearn 在 mnist 数据上做分类
+  2. 利用 sklearn 做线性回归模型
+  3. [[http://www.sickit-learn.org/stable/auto_examples/index.html][sklearn 网站]]
+* CAPM Model
+  
+  - Portfolio 资产组合
+    
+    #+BEGIN_SRC latex :exports results
+      \begin{equation*}
+        \begin{array}{l}
+          [a\%,b\%,c\%]\\
+          abs(a\%)+abs(b\%)+abs(c\%)=1
+        \end{array}
+      \end{equation*}
+    #+END_SRC
+
+  - Market Portfolio
+
+    - SP500
+
+    - 沪深 300
+
+    - Etc.
+
+  - 个股的 CAPM Model
+    
+    #+BEGIN_SRC latex :exports results
+      \begin{equation}
+        r_i(t) = \beta_i*r_m(t)+\alpha_i(t)
+      \end{equation}
+    #+END_SRC
+
+    - CAMP says: linear scaled return of the market, with some noise at mean 0.
+
+      #+BEGIN_SRC latex :exports results
+        \begin{equation}
+          E(\alpha(t)) = 0
+        \end{equation}
+      #+END_SRC
+
+* 被动式管理 vs 主动式管理基金
+
+  - 被动式管理：复制大盘指数，持有
+
+  - 主动式管理：选择个股，频繁交易
+
+  - 关键问题： $\alpha$ 是否为随机噪声， $\alpha$ 均值是否为 0.
+
+* 投资组合的 CAMP 模型
+
+  #+BEGIN_SRC latex :exports results
+    \begin{equation}
+      \begin{array}{lcl}
+        r_p(t) &=& \sum\limits_i\omega_i(\beta_ir_m(t)+\alpha_i(t))\\
+               &=& \sum\omega_i\beta_ir_m(t)+\sum\omega_i\alpha_i(t)\\
+               &=&\beta_pr_m(t)+\alpha_p(t).
+        \end{array}
+    \end{equation}
+  #+END_SRC
+
+* 几个推论
+
+  - $E(\alpha)=0$
+  - 选择好的 $\beta$ 值
+    - 牛市大 $\beta$
+    - 熊市小 $\beta$
+  - 如果市场有效假说成立，我们无法预测股市，也选不出来合适的 $\beta$.
+
+* 价格套利理论 (APT)
+
+  - 在 CAPM 公式中的 $\beta$ 可以进行分解
+
+  - $\beta=\omega\times{}r$
+
+* 技术分析 vs 基本面分析
+
+  - 历史数据
+
+    - 价格、交易量
+
+    - 计算指标 (features)
+
+    - 启发式选择
+
+* 技术分析何时 works
+
+  - 多个指标的非线性组合 (机器学习)
+
+  - 短时
+
+  - 异类监测
+
+* Trading Time Horizon 
+  
+  - 基本面指标一般是长时有效，短时无效
+
+* 最基本的指标和机器学习怎么介入
+
+  - 动量线 (Momentum): mom[t] = price[t]/price[t-n] - 1
+
+  - =SMA=: Simple Moving Average
+
+  - =BB=: Bollinger Bands
+
+* Normalization
+
+  - Norm = (Value - Mean)/Value.std
+  
