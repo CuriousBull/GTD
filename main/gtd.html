@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2017-03-08 三 23:03 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>My GTD Style Workflow</title>
+<meta name="generator" content="Org mode" />
+<meta name="author" content="胡琛" />
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+  /*]]>*/-->
+</style>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+</head>
+<body>
+<div id="content">
+<h1 class="title">My GTD Style Workflow</h1>
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#orgf177e1c">1. Work</a>
+<ul>
+<li><a href="#orgade06d5">1.1. Tasks</a>
+<ul>
+<li><a href="#orgfe628d4">1.1.1. <span class="done DONE">DONE</span> 联系甄赏修改混沌书</a></li>
+<li><a href="#org66f2310">1.1.2. <span class="todo WAITING">WAITING</span> 王雄混沌书更换模版&#xa0;&#xa0;&#xa0;<span class="tag"><span class="WAITING">WAITING</span></span></a></li>
+<li><a href="#orgd727df9">1.1.3. <span class="todo TODO">TODO</span> 组会</a></li>
+</ul>
+</li>
+<li><a href="#org430e2e1">1.2. Projects</a>
+<ul>
+<li><a href="#org479835d">1.2.1. <span class="done DONE">DONE</span> 王雄的混沌书精修版本 1 <code>[14/14]</code></a></li>
+<li><a href="#org23d46ae">1.2.2. <span class="todo TODO">TODO</span> 程序化短课 <code>[2/3]</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org9ab9708">2. Private</a>
+<ul>
+<li><a href="#org2fd7c75">2.1. Tasks</a>
+<ul>
+<li><a href="#org2cdc1ed">2.1.1. <span class="done DONE">DONE</span> 学习使用 ditaa</a></li>
+<li><a href="#org3ce437a">2.1.2. <span class="done DONE">DONE</span> 取护照</a></li>
+<li><a href="#org8cd0e2d">2.1.3. <span class="done DONE">DONE</span> Matplotlib 学习使用基础</a></li>
+<li><a href="#org185a2de">2.1.4. <span class="done DONE">DONE</span> Plantuml 学习</a></li>
+<li><a href="#org6a01c5d">2.1.5. <span class="todo TODO">TODO</span> 演示org-mode</a></li>
+</ul>
+</li>
+<li><a href="#orgaee0805">2.2. Projects</a>
+<ul>
+<li><a href="#orga231220">2.2.1. <span class="todo TODO">TODO</span> 机器学习基础 <code>[0/14]</code></a></li>
+<li><a href="#org5f91fe9">2.2.2. <span class="todo TODO">TODO</span> 机器学习与量化交易班 <code>[1/10]</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#org7043db1">3. Habit</a>
+<ul>
+<li><a href="#org2209c0a">3.1. <span class="todo NEXT">NEXT</span> 健身</a></li>
+<li><a href="#org6f99b18">3.2. <span class="todo NEXT">NEXT</span> 盘账</a></li>
+<li><a href="#orga1ed874">3.3. <span class="todo NEXT">NEXT</span> 吾日三省吾身</a></li>
+</ul>
+</li>
+<li><a href="#org3651649">4. Finance</a>
+<ul>
+<li><a href="#org04d8e0f">4.1. 2017/03</a>
+<ul>
+<li><a href="#org4c38d6e">4.1.1. Day3</a></li>
+<li><a href="#org6192657">4.1.2. Day4</a></li>
+<li><a href="#org7d93dbf">4.1.3. Day5</a></li>
+<li><a href="#orgbc9648b">4.1.4. Day6</a></li>
+<li><a href="#orgbf640b0">4.1.5. Day7</a></li>
+<li><a href="#org5e0cb32">4.1.6. Day8</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-orgf177e1c" class="outline-2">
+<h2 id="orgf177e1c"><span class="section-number-2">1</span> Work</h2>
+<div class="outline-text-2" id="text-1">
+</div><div id="outline-container-orgade06d5" class="outline-3">
+<h3 id="orgade06d5"><span class="section-number-3">1.1</span> Tasks</h3>
+<div class="outline-text-3" id="text-1-1">
+</div><div id="outline-container-orgfe628d4" class="outline-4">
+<h4 id="orgfe628d4"><span class="section-number-4">1.1.1</span> <span class="done DONE">DONE</span> 联系甄赏修改混沌书</h4>
+<div class="outline-text-4" id="text-1-1-1">
+</div>
+</div>
+<div id="outline-container-org66f2310" class="outline-4">
+<h4 id="org66f2310"><span class="section-number-4">1.1.2</span> <span class="todo WAITING">WAITING</span> 王雄混沌书更换模版&#xa0;&#xa0;&#xa0;<span class="tag"><span class="WAITING">WAITING</span></span></h4>
+<div class="outline-text-4" id="text-1-1-2">
+</div>
+</div>
+<div id="outline-container-orgd727df9" class="outline-4">
+<h4 id="orgd727df9"><span class="section-number-4">1.1.3</span> <span class="todo TODO">TODO</span> 组会</h4>
+<div class="outline-text-4" id="text-1-1-3">
+<ul class="org-ul">
+<li>布置程序化短课任务</li>
+</ul>
+<p>
+:CREATED:  <span class="timestamp-wrapper"><span class="timestamp">[2017-03-08 三 09:09]</span></span>
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org430e2e1" class="outline-3">
+<h3 id="org430e2e1"><span class="section-number-3">1.2</span> Projects</h3>
+<div class="outline-text-3" id="text-1-2">
+</div><div id="outline-container-org479835d" class="outline-4">
+<h4 id="org479835d"><span class="section-number-4">1.2.1</span> <span class="done DONE">DONE</span> 王雄的混沌书精修版本 1 <code>[14/14]</code></h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> 制作进度表</li>
+<li class="on"><code>[X]</code> Leading chapter 中的 "Organization of the Book" 中，添加所有章节 Abstract</li>
+<li class="on"><code>[X]</code> 第三章作者名与机构名修改 (前面是王雄的文章，New Discoveries 是别人的文章，需要修改)</li>
+<li class="on"><code>[X]</code> 表格居中设置</li>
+<li class="on"><code>[X]</code> 与 latex 模板有关的处理
+<ul class="org-ul">
+<li class="on"><code>[X]</code> Caption 居中设置 (模板默认设置为左对齐)</li>
+<li class="on"><code>[X]</code> pdf 页眉设置，最好有短标题 (模板问题，后面再说)</li>
+<li class="on"><code>[X]</code> 公式编号修改为按章节编号 (与模板有关)</li>
+<li class="on"><code>[X]</code> 作者名，机构名，邮箱，大小写修改(从网上找到的自定义命令，没有找到设置大小写的命令，原模板是没有单独设置章节作者的)</li>
+<li class="on"><code>[X]</code> Abstract 与作者名放入同页面 (容易修改，但是由于作者名信息字体太大等原因，修改后并不好看)</li>
+<li class="on"><code>[X]</code> 参考文献引用改为超链接</li>
+</ul></li>
+<li class="on"><code>[X]</code> 第三章 'One Equi' 图片格式修改</li>
+<li class="on"><code>[X]</code> 公式格式修改</li>
+<li class="on"><code>[X]</code> 表格位置调整 (反复修改，问题太多，建议直接问原作者要源码)
+<ul class="org-ul">
+<li>Chaos System with One Equilibrium (来自两篇文章 王雄的 thesis 和
+MALIHE MOLAIE and SAJAD JAFARI 的
+SIMPLE CHAOTIC FLOWS WITH ONE STABLE EQUILIBRIUM,文章中的超长表格我分割为两个表格处理，但不好看，还是
+建议问 Sajad 要 latex 源码)</li>
+<li>Chao System with No Equilibrium (来自两篇文章，Zhaochao Wei 的
+Dynamical behaviors of a chaotic system with no equilibria <b>可能需要他的授权</b> 
+另外一篇来自 Sajad Elementary quadratic chaotic flows with no equilibria，表格极难调整，
+建议直接索要他的 latex 源码)</li>
+</ul></li>
+<li class="on"><code>[X]</code> 图片引用问号</li>
+<li class="on"><code>[X]</code> 图片大小与 Caption</li>
+<li class="on"><code>[X]</code> 文字乱码</li>
+<li class="on"><code>[X]</code> 图片分辨率调整</li>
+<li class="on"><code>[X]</code> 参考文献格式修改 (统一格式，包括字体是否斜体，是否包含网址，在 pdf 中的位置，可能涉及到模板使用)</li>
+<li class="on"><code>[X]</code> 第二章参考文献格式可能有问题 (没有问题，可能是因为参考文献比较少，显得比较怪异)</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org23d46ae" class="outline-4">
+<h4 id="org23d46ae"><span class="section-number-4">1.2.2</span> <span class="todo TODO">TODO</span> 程序化短课 <code>[2/3]</code></h4>
+<div class="outline-text-4" id="text-1-2-2">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> 资料整理</li>
+<li class="on"><code>[X]</code> 讲义准备</li>
+<li class="off"><code>[&#xa0;]</code> 课件准备
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> Week 1</li>
+<li class="off"><code>[&#xa0;]</code> Week 2</li>
+<li class="off"><code>[&#xa0;]</code> Week 3</li>
+<li class="off"><code>[&#xa0;]</code> Week 4</li>
+<li class="off"><code>[&#xa0;]</code> Week 5</li>
+<li class="off"><code>[&#xa0;]</code> Week 6</li>
+</ul></li>
+<li class="off"><code>[&#xa0;]</code> 作业准备</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org9ab9708" class="outline-2">
+<h2 id="org9ab9708"><span class="section-number-2">2</span> Private</h2>
+<div class="outline-text-2" id="text-2">
+</div><div id="outline-container-org2fd7c75" class="outline-3">
+<h3 id="org2fd7c75"><span class="section-number-3">2.1</span> Tasks</h3>
+<div class="outline-text-3" id="text-2-1">
+</div><div id="outline-container-org2cdc1ed" class="outline-4">
+<h4 id="org2cdc1ed"><span class="section-number-4">2.1.1</span> <span class="done DONE">DONE</span> 学习使用 ditaa</h4>
+<div class="outline-text-4" id="text-2-1-1">
+<ul class="org-ul">
+<li>windows 下 ditaa 可用，但问题不少，具体有以下
+<ul class="org-ul">
+<li>'&lt;' 无法画出</li>
+<li>中文支持极差</li>
+<li>颜色显示问题</li>
+</ul></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-org3ce437a" class="outline-4">
+<h4 id="org3ce437a"><span class="section-number-4">2.1.2</span> <span class="done DONE">DONE</span> 取护照</h4>
+<div class="outline-text-4" id="text-2-1-2">
+</div>
+</div>
+<div id="outline-container-org8cd0e2d" class="outline-4">
+<h4 id="org8cd0e2d"><span class="section-number-4">2.1.3</span> <span class="done DONE">DONE</span> Matplotlib 学习使用基础</h4>
+<div class="outline-text-4" id="text-2-1-3">
+</div>
+</div>
+<div id="outline-container-org185a2de" class="outline-4">
+<h4 id="org185a2de"><span class="section-number-4">2.1.4</span> <span class="done DONE">DONE</span> Plantuml 学习</h4>
+<div class="outline-text-4" id="text-2-1-4">
+</div>
+</div>
+<div id="outline-container-org6a01c5d" class="outline-4">
+<h4 id="org6a01c5d"><span class="section-number-4">2.1.5</span> <span class="todo TODO">TODO</span> 演示org-mode</h4>
+<div class="outline-text-4" id="text-2-1-5">
+</div>
+</div>
+</div>
+<div id="outline-container-orgaee0805" class="outline-3">
+<h3 id="orgaee0805"><span class="section-number-3">2.2</span> Projects</h3>
+<div class="outline-text-3" id="text-2-2">
+</div><div id="outline-container-orga231220" class="outline-4">
+<h4 id="orga231220"><span class="section-number-4">2.2.1</span> <span class="todo TODO">TODO</span> 机器学习基础 <code>[0/14]</code></h4>
+<div class="outline-text-4" id="text-2-2-1">
+<ul class="org-ul">
+<li class="off"><code>[&#xa0;]</code> 基础，关于性能评估</li>
+<li class="off"><code>[&#xa0;]</code> 决策树</li>
+<li class="off"><code>[&#xa0;]</code> 最近邻规则 &#x2013; KNN 分类应用</li>
+<li class="off"><code>[&#xa0;]</code> 支持向量机上</li>
+<li class="off"><code>[&#xa0;]</code> 神经网络</li>
+<li class="off"><code>[&#xa0;]</code> 简单线性回归</li>
+<li class="off"><code>[&#xa0;]</code> 多元线性回归</li>
+<li class="off"><code>[&#xa0;]</code> 非线性回归 &#x2013; Logistic Regression</li>
+<li class="off"><code>[&#xa0;]</code> 神经网络 &#x2013; NN 算法</li>
+<li class="off"><code>[&#xa0;]</code> 支持向量机下</li>
+<li class="off"><code>[&#xa0;]</code> 回归中的相关度和决定系数</li>
+<li class="off"><code>[&#xa0;]</code> 回归中的相关性和 R 平方值应用</li>
+<li class="off"><code>[&#xa0;]</code> K-means 算法</li>
+<li class="off"><code>[&#xa0;]</code> 层次聚类</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org5f91fe9" class="outline-4">
+<h4 id="org5f91fe9"><span class="section-number-4">2.2.2</span> <span class="todo TODO">TODO</span> 机器学习与量化交易班 <code>[1/10]</code></h4>
+<div class="outline-text-4" id="text-2-2-2">
+<ul class="org-ul">
+<li class="on"><code>[X]</code> 课一：</li>
+<li class="off"><code>[&#xa0;]</code> 课二：</li>
+<li class="off"><code>[&#xa0;]</code> 课三：</li>
+<li class="off"><code>[&#xa0;]</code> 课四：</li>
+<li class="off"><code>[&#xa0;]</code> 课五：</li>
+<li class="off"><code>[&#xa0;]</code> 课六：</li>
+<li class="off"><code>[&#xa0;]</code> 课七：</li>
+<li class="off"><code>[&#xa0;]</code> 课八：</li>
+<li class="off"><code>[&#xa0;]</code> 课九：</li>
+<li class="off"><code>[&#xa0;]</code> 课十：</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org7043db1" class="outline-2">
+<h2 id="org7043db1"><span class="section-number-2">3</span> Habit</h2>
+<div class="outline-text-2" id="text-3">
+</div><div id="outline-container-org2209c0a" class="outline-3">
+<h3 id="org2209c0a"><span class="section-number-3">3.1</span> <span class="todo NEXT">NEXT</span> 健身</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2017-03-01 三 12:26]</span></span>
+<a href="file:///home/curiousbull/workflow/main/gtd.html#MissingReference">Habit</a>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-03-01 三 16:00 .+1d&gt;</span></span>
+</p>
+<p>
+:STYLE: habit
+:REPEAT<sub>TO</sub><sub>STATE</sub>: NEXT
+</p>
+</div>
+</div>
+<div id="outline-container-org6f99b18" class="outline-3">
+<h3 id="org6f99b18"><span class="section-number-3">3.2</span> <span class="todo NEXT">NEXT</span> 盘账</h3>
+<div class="outline-text-3" id="text-3-2">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2017-03-02 四 15:54]</span></span>
+<a href="file:///home/curiousbull/workflow/main/gtd.html#MissingReference">Habit</a>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-03-02 四 22:00 .+1d&gt;</span></span>
+</p>
+<p>
+:STYLE: habit
+:REPEAT<sub>TO</sub><sub>STATE</sub>: NEXT
+</p>
+</div>
+</div>
+<div id="outline-container-orga1ed874" class="outline-3">
+<h3 id="orga1ed874"><span class="section-number-3">3.3</span> <span class="todo NEXT">NEXT</span> 吾日三省吾身</h3>
+<div class="outline-text-3" id="text-3-3">
+<p>
+<span class="timestamp-wrapper"><span class="timestamp">[2017-03-06 一 22:43]</span></span>
+<a href="file:///home/curiousbull/workflow/main/gtd.html#MissingReference">Finance</a>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-03-06 一 22:00 .+1d&gt;</span></span>
+SCHEDULED: <span class="timestamp-wrapper"><span class="timestamp">&lt;2017-03-06 一 09:30 .+1d&gt;</span></span>
+</p>
+<p>
+:STYLE: habit
+:REPEAT<sub>TO</sub><sub>STATE</sub>: NEXT
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3651649" class="outline-2">
+<h2 id="org3651649"><span class="section-number-2">4</span> Finance</h2>
+<div class="outline-text-2" id="text-4">
+</div><div id="outline-container-org04d8e0f" class="outline-3">
+<h3 id="org04d8e0f"><span class="section-number-3">4.1</span> 2017/03</h3>
+<div class="outline-text-3" id="text-4-1">
+</div><div id="outline-container-org4c38d6e" class="outline-4">
+<h4 id="org4c38d6e"><span class="section-number-4">4.1.1</span> Day3</h4>
+<div class="outline-text-4" id="text-4-1-1">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">支出类别</th>
+<th scope="col" class="org-left">支出明细</th>
+<th scope="col" class="org-right">支出金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">早餐</td>
+<td class="org-left">(星巴克) 大杯拿铁，提子多士</td>
+<td class="org-right">41.00</td>
+</tr>
+
+<tr>
+<td class="org-left">午餐</td>
+<td class="org-left">韭黄炒蛋，花菜炒肉</td>
+<td class="org-right">4.80</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(微咖) 拿铁</td>
+<td class="org-right">20.00</td>
+</tr>
+
+<tr>
+<td class="org-left">晚饭</td>
+<td class="org-left">杏鲍菇，番茄炒蛋</td>
+<td class="org-right">8.90</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">合计</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">74.70</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org6192657" class="outline-4">
+<h4 id="org6192657"><span class="section-number-4">4.1.2</span> Day4</h4>
+<div class="outline-text-4" id="text-4-1-2">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">支出类别</th>
+<th scope="col" class="org-left">支出明细</th>
+<th scope="col" class="org-right">支出金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">早饭</td>
+<td class="org-left">白粥、蛋挞、鸡蛋饼</td>
+<td class="org-right">3.70</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(微咖) 拿铁</td>
+<td class="org-right">20.00</td>
+</tr>
+
+<tr>
+<td class="org-left">午饭</td>
+<td class="org-left">虾，韭黄炒蛋，麻婆豆腐</td>
+<td class="org-right">12.30</td>
+</tr>
+
+<tr>
+<td class="org-left">晚饭</td>
+<td class="org-left">炭烧鸡翅饭，卤蛋</td>
+<td class="org-right">21.00</td>
+</tr>
+
+<tr>
+<td class="org-left">饮料</td>
+<td class="org-left">佳得乐</td>
+<td class="org-right">4.00</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">总计</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">61.00</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="outline-container-org7d93dbf" class="outline-4">
+<h4 id="org7d93dbf"><span class="section-number-4">4.1.3</span> Day5</h4>
+<div class="outline-text-4" id="text-4-1-3">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">支出类别</th>
+<th scope="col" class="org-left">支出明细</th>
+<th scope="col" class="org-right">支出金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">早饭</td>
+<td class="org-left">(星巴克) 拿铁，提子多士</td>
+<td class="org-right">10.00</td>
+</tr>
+
+<tr>
+<td class="org-left">午饭</td>
+<td class="org-left">杏鲍菇，西兰花</td>
+<td class="org-right">10.80</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(微咖) 拿铁</td>
+<td class="org-right">20.00</td>
+</tr>
+
+<tr>
+<td class="org-left">晚饭</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">总计</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgbc9648b" class="outline-4">
+<h4 id="orgbc9648b"><span class="section-number-4">4.1.4</span> Day6</h4>
+<div class="outline-text-4" id="text-4-1-4">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">支出类别</th>
+<th scope="col" class="org-left">支出明细</th>
+<th scope="col" class="org-right">支出金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">早饭</td>
+<td class="org-left">鸡蛋饼，蛋挞，白粥</td>
+<td class="org-right">4.70</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(微咖) 拿铁</td>
+<td class="org-right">20.00</td>
+</tr>
+
+<tr>
+<td class="org-left">午饭</td>
+<td class="org-left">芹菜炒肉，菠萝番茄</td>
+<td class="org-right">7.6</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(星巴克) 拿铁</td>
+<td class="org-right">31.00</td>
+</tr>
+
+<tr>
+<td class="org-left">晚饭</td>
+<td class="org-left">芹菜炒肉，花菜炒肉</td>
+<td class="org-right">6.8</td>
+</tr>
+
+<tr>
+<td class="org-left">水果</td>
+<td class="org-left">桂庙水果町</td>
+<td class="org-right">16.80</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">总计</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">86.9</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-orgbf640b0" class="outline-4">
+<h4 id="orgbf640b0"><span class="section-number-4">4.1.5</span> Day7</h4>
+<div class="outline-text-4" id="text-4-1-5">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">支出类别</th>
+<th scope="col" class="org-left">支出明细</th>
+<th scope="col" class="org-right">支出金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">早饭</td>
+<td class="org-left">(星巴克)馥芮白，提子多士</td>
+<td class="org-right">13.00</td>
+</tr>
+
+<tr>
+<td class="org-left">午饭</td>
+<td class="org-left">麻婆豆腐，木耳，平菇</td>
+<td class="org-right">9.10</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(微咖) 拿铁</td>
+<td class="org-right">20.00</td>
+</tr>
+
+<tr>
+<td class="org-left">晚饭</td>
+<td class="org-left">冒菜</td>
+<td class="org-right">26.00</td>
+</tr>
+
+<tr>
+<td class="org-left">饮料</td>
+<td class="org-left">佳得乐</td>
+<td class="org-right">4.00</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">总计</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">72.10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+
+<div id="outline-container-org5e0cb32" class="outline-4">
+<h4 id="org5e0cb32"><span class="section-number-4">4.1.6</span> Day8</h4>
+<div class="outline-text-4" id="text-4-1-6">
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-right" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">支出类别</th>
+<th scope="col" class="org-left">支出明细</th>
+<th scope="col" class="org-right">支出金额</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">早饭</td>
+<td class="org-left">鸡蛋饼，白粥，榨菜</td>
+<td class="org-right">3.70</td>
+</tr>
+
+<tr>
+<td class="org-left">非必要</td>
+<td class="org-left">(微咖) 拿铁</td>
+<td class="org-right">20.00</td>
+</tr>
+</tbody>
+<tbody>
+<tr>
+<td class="org-left">总计</td>
+<td class="org-left">&#xa0;</td>
+<td class="org-right">&#xa0;</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: 胡琛</p>
+<p class="date">Created: 2017-03-08 三 23:03</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
