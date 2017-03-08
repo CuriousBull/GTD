@@ -228,5 +228,54 @@
 
 ** =ROC= 与 =AUC=
          
+   - ROC 曲线
+
+     #+BEGIN_QUOTE
+     我们根据学习器的预测结果对样例进行排序，按此顺序逐个将样本作为正例进行预测，每次计算出两个重要量的值，分别以它们为横轴、纵轴作图，就
+     得到了 “ROC 曲线”，其中，横坐标为 “真正例率”，纵坐标为 “假正例率”，定义如下：
+
+     #+BEGIN_SRC latex :exports results
+       \begin{equation}
+         \begin{array}{lcl}
+           TPR &=& \frac{TP}{TP+FN},\\
+           FPR &=& \frac{FP}{TN+FP}.
+         \end{array}
+         \end{equation}
+     #+END_SRC
+
+     显示 “ROC 曲线” 的图叫做 “ROC 图”， “ROC 曲线” 下的面积称为 “AUC(Area Under ROC Curve)”。
+     #+END_QUOTE
+
+   - 不同 ROC 曲线的比较：与 P-R 曲线类似，若一个学习器的 ROC 被另一个学习器曲线完成包住，则可以断言，后者性能会更好，如果两者有交叉，则
+     可以比较 AUC.
+
+   - *AUC 面积计算* (难点)
+
+     可以通过对 ROC 曲线下各部分的面积求和而得。假定 ROC 曲线是由坐标 $\{(x_1,y_1),(x_2,y_2),\ldots,(x_m,y_m)\}$ 的点按序连接而成
+     ($x_1=0,x_m=1$). 则 AUC 估算为：
+
+     #+BEGIN_SRC latex :exports results
+       \begin{equation}
+         AUC = \frac{1}{2}\sum\limits^{m-1}_{i=1}(x_{i+1}-x_i)\cdot(y_i+y_{i+1}).
+       \end{equation}
+     #+END_SRC
+
+   - *排序损失函数 (loss function)* (更难理解)
+
+     #+BEGIN_SRC latex :exports results
+       \begin{equation}
+         \mathscr{l}_{rank} = \frac{1}{m^+m^-}\sum\limits_{x^+\in{}D^+}\sum\limits_{x^-\in{}D^-}\left(
+         I(f(x^+) < f(x^-)) + \frac{1}{2}I(f(x^+) = f(x^-)) \right)
+       \end{equation}
+     #+END_SRC
+
+       #+RESULTS:
+       #+BEGIN_EXPORT latex
+       \begin{equation}
+         \mathscr{l}_{rank} = \frac{1}{m^+m^-}\sum\limits_{x^+\in{}D^+}\sum\limits_{x^-\in{}D^-}\left(
+         I(f(x^+) < f(x^-)) + \frac{1}{2}I(f(x^+) = f(x^-)) \right)
+       \end{equation}
+       #+END_EXPORT
+
 * 比较检验
 * 偏差与方差
