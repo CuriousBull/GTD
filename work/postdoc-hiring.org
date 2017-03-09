@@ -1,0 +1,100 @@
+#+TITLE: JOBS：PostDoc positions, Chaos Quant Lab, IAS of Shenzhen University.
+
+*JOBS：PostDoc positions, Chaos Quant Lab, IAS of Shenzhen University.*
+
+*/Welcome to Shenzhen, a city full of dreams and creativity, a city without haze./*
+
+
+* Introduction of IAS and Advisor
+
+  The IAS(Institude for Advance Study) has been established at Shenzhen University to provide both undergraduate and 
+  postgraduate education, focusing on interdisciplinary teaching and research. IAS will build 
+  a team consisting of experienced professors with international vision and young teachers 
+  with great potential. It will foster collaborations with world-class universities in Hong Kong
+  and abroad. By adopting best-practice management methods used by overseas research 
+  universities, IAS aims to create an academic environment sensitive to progress made by 
+  international peers, with the overall goal of attaining excellence in teaching, research and 
+  management. IAS provides a special platform within Shenzhen University for exploring 
+  innovative approaches to higher education and research. 
+
+  Chaos Quant Lab of IAS is a lab focusing on quant-trading and complexity research with 
+  abundant software and hardware resource. The lab is led by Xiong Wang, who is graduated from SJTU(Shanghai Jiaotong University)
+  and finished his PhD in City University of Hong Kong with research interests in complex system, chaos theory
+  and financial big data.
+
+* Recruitment direction
+
+  1. Chaos Theory, Basic Theoritic Research in Complex System
+     - Number of people to be recruited: 3 to 5
+     - Skill Requirements:  Mathematic and Applied Mathematics or related background 
+     - Research Area: Non-linear Theory of Dynamical System, Chaos Theory and Numerical Simulation,  Memristor based chaotic circuit,
+       Cross-over Study in Complex System and Complex Network.
+       
+  2. Stochastic Calculus in Finance and Pricing of Derivative Securities
+     - Number of people to be recruited: 2 to 3
+     - Skill Requirements: Applicants should have Financial Engineering and Stochastic Calculus backgrounds whose with paper published 
+       on related region.
+     - Research Area: Risk Neutral Pricing and Modeling for Stochastic Processes Theory in Finance.
+
+  3. Quant Strategies Research
+     - Number of people to be recruited: 2 to 3
+     - Skill Requirements: Mathematical Statistics or related background with experience in programming.
+     - Research Area:  Market Neutral Strategies, Statistical Arbitrage, Bond Investment, Long-short Strategies in Stock.
+ 
+  4. Trading Platform and AI
+     - Number of people to be recruited: 4 to 6
+     - Skill Requirements: Computer Science or related background, AI or related background
+     - Research Area: Development of trading system, DBA, Trading Algorithm Implementation, Data Processing in Quant Trading,
+       Trading Strategies based on Deep Learning.
+
+* Other Requirements
+
+  1. Applicants (under the age of 35 years) should have received a doctorate degree in one of computer science, electronic engineering,
+     applied mathematics, theoretic phyiscs, probability and statistics or quantitive analysis related subject.
+
+  2. Clear and good logic thoughts, no afraid of challenges, enthusiasm in work are the basic qualities for our studying.
+
+  3. Applicants should master at least one of basic programming languages, e.g. Python, C-C++, Matlab, R, be familiar with development 
+     with SQLServer or Oracal Database.
+
+  4. Applicants should have clear research plan and independent research ability.
+
+* Salary and other treatment
+
+  1. Salary is no less than 220,000 Yuan/year and consists of four parts:
+
+     - 120,000 Yuan/year postdoc allowance from the Shenzhen government (depending on the middle and final evaluation).
+
+     - 2240 Yuan/month living allowance from the Shenzhen University.
+
+     - 6,166 Yuan/month (5150 yuan/month after tax) salary from the Shenzhen government.
+
+     - 200 Yuan/month food subsides(10 months per year) from the Shenzhen University.
+
+  2. Postdoctoral researchers, who work in Shenzhen can apply for start-up fundings up to 300,000 Yuan.
+
+  3. 1600k RMB housing subsidy, if work in Shenzhen for more than three years after completing their post-doctoral study.
+
+  4. Candidates who have worked overseas for more than one year can apply for the “Peacock program” of Shenzhen City, 
+     and will be eligible for 1600K-3000k RMB housing subsidy if employed in Shenzhen.  
+
+  5. The outstanding postdoc can be recommended to a position in SZU.
+
+
+* Application documents
+
+  1. CV 
+  
+  2. BS and PhD certificates 
+
+  3. Representative published papers 
+
+  4. Recommendation letter of supervisor
+
+* Contact 
+ 
+  - Address: Institute for Advanced Study, Shenzhen University, Nanshan District, Shenzhen, Guangdong, China 518060
+  - Tel: +86-0755-2693-1983
+  - Contact: Dr. Xiong Wang 
+  - Email: wangxiong8686@szu.edu.cn
+ 
