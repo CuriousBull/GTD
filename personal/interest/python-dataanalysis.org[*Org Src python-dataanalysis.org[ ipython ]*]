@@ -1,0 +1,21 @@
+import numpy as np
+
+a = np.arange(10).reshape(2,5)
+
+print(a)
+
+b = a.ravel()
+
+print(b)
+print(a)
+
+c = a.flatten()
+
+print(c)
+print(a)
+
+b[0] = 1
+print(b)
+print(c)
+print(a)
+

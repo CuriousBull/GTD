@@ -1,0 +1,84 @@
+#+TITLE: Python 数据分析
+
+
+* Python 程序库入门
+
+** Numpy 数组与普通 list 计算对比
+
+   #+BEGIN_SRC ipython :session mysession
+     import sys
+     from datetime import datetime
+     import numpy as np
+
+     def pythonsum(n):
+         a = list(range(n))
+         b = list(range(n))
+         c = []
+         for i in range(len(a)):
+             a[i] = i**2
+             b[i] = i**3
+             c.append(a[i]+b[i])
+
+         return c
+
+     def numpysum(n):
+         a = np.arange(n)**2
+         b = np.arange(n)**3
+         c = a+b
+         return c
+
+     size = int(100000)
+     start = datetime.now()
+     c = pythonsum(size)
+     delta = datetime.now() - start
+     print("the last two summation is", c[-2])
+     print("duration for pythonsum is", delta.microseconds)
+     start = datetime.now()
+     c = numpysum(size)
+     delta = datetime.now() - start
+     print("the last two summation is", c[-2])
+     print("duration for numpysum is", delta.microseconds)
+   #+END_SRC
+
+   #+RESULTS:
+
+* Numpy 数组
+  
+** 处理数组形状
+   
+   1. =ravel()= 与 =flatten()= 区别
+
+      - =ravel()= 创建 view
+
+      - =flatten()= 创建副本
+
+      - 示例
+
+        #+BEGIN_SRC ipython :session mysession
+          import numpy as np
+
+          a = np.arange(10).reshape(2,5)
+
+          print(a)
+
+          b = a.ravel()
+
+          print(b)
+          print(a)
+
+          c = a.flatten()
+
+          print(c)
+          print(a)
+
+          b[0] = 1
+          print(b)
+          print(a)
+          print(c)
+        #+END_SRC
+
+   2. 数组堆叠
+
+      - 水平叠加 (=hstack()=)
+
+      - 垂直叠加(=vstack()=)
